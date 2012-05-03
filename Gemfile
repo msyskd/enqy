@@ -37,5 +37,8 @@ gem 'jquery-rails'
 # To use debugger
 #gem 'ruby-debug19', :require => 'ruby-debug'
 
-#To use devise
+# To use devise
 gem 'devise'
+
+# To use autocomplete
+gem 'rails3-jquery-autocomplete'
