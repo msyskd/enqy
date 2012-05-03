@@ -8,5 +8,7 @@ class Client < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :sales_person
+  
+  
 
 end
