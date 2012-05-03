@@ -1,0 +1,27 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone1</th>
+    <th>Phone2</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @sales_people.each do |sales_person| %>
+  <tr>
+    <td><%= sales_person.name %></td>
+    <td><%= sales_person.email %></td>
+    <td><%= sales_person.phone1 %></td>
+    <td><%= sales_person.phone2 %></td>
+    <td><%= link_to 'Show', sales_person %></td>
+    <td><%= link_to 'Edit', edit_sales_person_path(sales_person) %></td>
+    <td><%= link_to 'Destroy', sales_person, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Sales person', new_sales_person_path %>

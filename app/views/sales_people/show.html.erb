@@ -1,0 +1,23 @@
+<p>
+  <b>Name:</b>
+  <%= @sales_person.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @sales_person.email %>
+</p>
+
+<p>
+  <b>Phone1:</b>
+  <%= @sales_person.phone1 %>
+</p>
+
+<p>
+  <b>Phone2:</b>
+  <%= @sales_person.phone2 %>
+</p>
+
+
+<%= link_to 'Edit', edit_sales_person_path(@sales_person) %> |
+<%= link_to 'Back', sales_people_path %>

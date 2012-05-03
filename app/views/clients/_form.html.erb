@@ -1,0 +1,81 @@
+<%= form_for(@client) do |f| %>
+<% if @client.errors.any? %>
+<div id="error_explanation">
+	<h2><%= pluralize(@client.errors.count, "error") %> prohibited this client from being saved:</h2>
+
+	<ul>
+		<% @client.errors.full_messages.each do |msg| %>
+		<li>
+			<%= msg %>
+		</li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+
+<div class="field">
+	<%= f.label :name %>
+	<br />
+	<%= f.text_field :name %>
+</div>
+<div class="field">
+	<%= f.label :user_id %>
+	<br />
+	<%= f.text_field :user_id %>
+</div>
+<div class="field">
+	<%= f.label :sales_person_id %>
+	<br />
+	<%= f.number_field :sales_person_id %>
+</div>
+<div class="field">
+<label>Contract renewal month</label>
+	<br />
+
+	<table>
+		<tr>
+			<td> <%= f.check_box :renewal_month1 %></td>
+			<td>1</td>
+			<td> <%= f.check_box :renewal_month2 %></td>
+			<td>2</td>
+			<td> <%= f.check_box :renewal_month3 %></td>
+			<td>3</td>
+			<td> <%= f.check_box :renewal_month4 %></td>
+			<td>4</td>
+			<td> <%= f.check_box :renewal_month5 %></td>
+			<td>5</td>
+			<td> <%= f.check_box :renewal_month6 %></td>
+			<td>6</td>
+		</tr>
+		<tr>
+			<td> <%= f.check_box :renewal_month7 %></td>
+			<td>7</td>
+			<td> <%= f.check_box :renewal_month8 %></td>
+			<td>8</td>
+			<td> <%= f.check_box :renewal_month9%></td>
+			<td>9</td>
+			<td> <%= f.check_box :renewal_month10 %></td>
+			<td>10</td>
+			<td> <%= f.check_box :renewal_month11 %></td>
+			<td>11</td>
+			<td> <%= f.check_box :renewal_month12 %></td>
+			<td>12</td>
+
+		</tr>
+
+	</table>
+</div>
+<div class="field">
+	<%= f.label :notice_me %>
+	<br />
+	<%= f.number_field :notice_me %>
+</div>
+<div class="field">
+	<%= f.label :usable %>
+	<br />
+	<%= f.check_box :usable %>
+</div>
+<div class="actions">
+	<%= f.submit %>
+</div>
+<% end %>

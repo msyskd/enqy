@@ -1,0 +1,53 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>User</th>
+    <th>Sales person</th>
+    <th>month1</th>
+    <th>month2</th>
+    <th>month3</th>
+    <th>month4</th>
+    <th>month5</th>
+    <th>month6</th>
+    <th>month7</th>
+    <th>month8</th>
+    <th>month9</th>
+    <th>month10</th>
+    <th>month11</th>
+    <th>month12</th>
+    <th>Notice me</th>
+    <th>Usable</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @clients.each do |client| %>
+  <tr>
+    <td><%= client.name %></td>
+    <td><%= client.user_id %></td>
+    <td><%= client.sales_person_id %></td>
+    <td><%= client.renewal_month1 %></td>
+    <td><%= client.renewal_month2 %></td>
+    <td><%= client.renewal_month3 %></td>
+    <td><%= client.renewal_month4 %></td>
+    <td><%= client.renewal_month5 %></td>
+    <td><%= client.renewal_month6 %></td>
+    <td><%= client.renewal_month7 %></td>
+    <td><%= client.renewal_month8 %></td>
+    <td><%= client.renewal_month9 %></td>
+    <td><%= client.renewal_month10 %></td>
+    <td><%= client.renewal_month11 %></td>
+    <td><%= client.renewal_month12 %></td>
+    <td><%= client.notice_me %></td>
+    <td><%= client.usable %></td>
+    <td><%= link_to 'Show', client %></td>
+    <td><%= link_to 'Edit', edit_client_path(client) %></td>
+    <td><%= link_to 'Destroy', client, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Client', new_client_path %>

@@ -1,0 +1,55 @@
+$notice-color:blue;
+$alert-color:red;
+$main-color:white;
+$content-color:#EEEEEE;
+
+html {
+  font-family: Helvetica, Arial, "MS PGothic", Osaka, Sans-serif;
+}
+
+body {
+  margin: 0px;
+}
+
+p.notice {
+  color: $notice-color;
+}
+
+p.alert {
+  color: $alert-color;
+}
+
+div#nav {
+  text-align: right;
+  border-style: solid;
+  border-width: 0px;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 40px;
+  background-color: $content-color;
+  h1 {
+    float: left;
+    text-align: left;
+  }
+  
+  }
+
+div#main_content {
+  border-style: solid;
+  border-width: 0px;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 40px;
+  background-color: $content-color;
+  background: -moz-linear-gradient(top, $content-color, $main-color);
+  background: -webkit-gradient(linear, left top, left bottom, from($content-color), to($main-color));
+}
+
+#notice {
+  color: $notice-color; }
+
+.field_with_errors {
+  padding: 2px;
+  background-color: $alert-color;
+  display: table; }
+

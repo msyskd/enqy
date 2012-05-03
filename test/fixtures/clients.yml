@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  user_id: 
+  sales_person_id: 1
+  renewal_month1: false
+  renewal_month2: false
+  renewal_month3: false
+  renewal_month4: false
+  renewal_month5: false
+  renewal_month6: false
+  renewal_month7: false
+  renewal_month8: false
+  renewal_month9: false
+  renewal_month10: false
+  renewal_month11: false
+  renewal_month12: false
+  notice_me: 1
+  usable: false
+
+two:
+  name: MyString
+  user_id: 
+  sales_person_id: 1
+  renewal_month1: false
+  renewal_month2: false
+  renewal_month3: false
+  renewal_month4: false
+  renewal_month5: false
+  renewal_month6: false
+  renewal_month7: false
+  renewal_month8: false
+  renewal_month9: false
+  renewal_month10: false
+  renewal_month11: false
+  renewal_month12: false
+  notice_me: 1
+  usable: false
