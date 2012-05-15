@@ -1,7 +1,7 @@
 Enqy::Application.routes.draw do
-  resources :clients
-
   resources :sales_people
+
+  resources :clients
 
   devise_for :users
 

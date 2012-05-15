@@ -6,9 +6,8 @@ class Client < ActiveRecord::Base
   validates :sales_person_id, :presence => true, :numericality => true
   validates :user_id, :presence => true, :numericality => true
 
-  belongs_to :user
+  belongs_to :user  
   belongs_to :sales_person
-  
   
 
 end

@@ -18,7 +18,7 @@ class SalesPeopleControllerTest < ActionController::TestCase
 
   test "should create sales_person" do
     assert_difference('SalesPerson.count') do
-      post :create, sales_person: { email: @sales_person.email, name: @sales_person.name, phone1: @sales_person.phone1, phone2: @sales_person.phone2 }
+      post :create, sales_person: { email: @sales_person.email, first_name: @sales_person.first_name, last_name: @sales_person.last_name, phone1: @sales_person.phone1, phone2: @sales_person.phone2 }
     end
 
     assert_redirected_to sales_person_path(assigns(:sales_person))
@@ -35,7 +35,7 @@ class SalesPeopleControllerTest < ActionController::TestCase
   end
 
   test "should update sales_person" do
-    put :update, id: @sales_person, sales_person: { email: @sales_person.email, name: @sales_person.name, phone1: @sales_person.phone1, phone2: @sales_person.phone2 }
+    put :update, id: @sales_person, sales_person: { email: @sales_person.email, first_name: @sales_person.first_name, last_name: @sales_person.last_name, phone1: @sales_person.phone1, phone2: @sales_person.phone2 }
     assert_redirected_to sales_person_path(assigns(:sales_person))
   end
 

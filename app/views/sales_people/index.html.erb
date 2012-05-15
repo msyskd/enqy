@@ -1,6 +1,7 @@
 <table>
   <tr>
-    <th>Name</th>
+    <th>First name</th>
+    <th>Last name</th>
     <th>Email</th>
     <th>Phone1</th>
     <th>Phone2</th>
@@ -11,7 +12,8 @@
 
 <% @sales_people.each do |sales_person| %>
   <tr>
-    <td><%= sales_person.name %></td>
+    <td><%= sales_person.first_name %></td>
+    <td><%= sales_person.last_name %></td>
     <td><%= sales_person.email %></td>
     <td><%= sales_person.phone1 %></td>
     <td><%= sales_person.phone2 %></td>

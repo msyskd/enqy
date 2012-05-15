@@ -3,7 +3,7 @@ class SalesPeopleController < ApplicationController
   # GET /sales_people.json
   def index
     @sales_people = SalesPerson.all
-    @title="Listing Sales People"
+    @title = "Listing Sales People"
 
     respond_to do |format|
       format.html # index.html.erb
@@ -27,7 +27,7 @@ class SalesPeopleController < ApplicationController
   # GET /sales_people/new.json
   def new
     @sales_person = SalesPerson.new
-    @title =  "New Sales Person"
+    @title = "New Sales Person"
 
     respond_to do |format|
       format.html # new.html.erb
@@ -39,13 +39,14 @@ class SalesPeopleController < ApplicationController
   def edit
     @sales_person = SalesPerson.find(params[:id])
     @title = "Editing Sales Person"
+
   end
 
   # POST /sales_people
   # POST /sales_people.json
   def create
     @sales_person = SalesPerson.new(params[:sales_person])
-    @title =  "New Sales Person"
+    @title = "New Sales Person"
 
     respond_to do |format|
       if @sales_person.save
