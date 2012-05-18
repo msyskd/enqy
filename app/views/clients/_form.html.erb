@@ -21,15 +21,17 @@
 <div class="field">
 	<%= f.label :user_id %>
 	<br />
-	<%= f.text_field :user_id %>
+	<%= f.collection_select :user_id, User.find(:all), :id, :email, :include_blank => true %>
+
 </div>
 <div class="field">
 	<%= f.label :sales_person_id %>
 	<br />
-	<%= f.number_field :sales_person_id %>
+	<%= f.collection_select :sales_person_id, SalesPerson.find(:all), :id, :full_name, :include_blank => true %>
+
 </div>
 <div class="field">
-<label>Contract renewal month</label>
+	<label>Contract renewal month</label>
 	<br />
 
 	<table>

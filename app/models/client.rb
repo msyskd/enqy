@@ -6,8 +6,62 @@ class Client < ActiveRecord::Base
   validates :sales_person_id, :presence => true, :numericality => true
   validates :user_id, :presence => true, :numericality => true
 
-  belongs_to :user  
+  belongs_to :user
   belongs_to :sales_person
   
+  def renewal_month
+    a = []
+
+    if renewal_month1
+      a.push(1)
+    end
+
+    if renewal_month2
+      a.push(2)
+    end
+
+    if renewal_month3
+      a.push(3)
+    end
+
+    if renewal_month4
+      a.push(4)
+    end
+
+    if renewal_month5
+      a.push(5)
+    end
+
+    if renewal_month6
+      a.push(6)
+    end
+
+    if renewal_month7
+      a.push(7)
+    end
+
+    if renewal_month8
+      a.push(8)
+    end
+
+    if renewal_month9
+      a.push(9)
+    end
+
+    if renewal_month10
+      a.push(10)
+    end
+
+    if renewal_month11
+      a.push(11)
+    end
+
+    if renewal_month12
+      a.push(12)
+    end
+    
+    a.join(',')
+    
+  end
 
 end

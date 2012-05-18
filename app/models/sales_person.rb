@@ -7,6 +7,10 @@ class SalesPerson < ActiveRecord::Base
   validates :phone1, :presence => true, :numericality => true
   validates :phone2, :numericality => true
 
+  validates_format_of :email,
+                      :with       => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i,
+                      :message    => 'email must be valid'
+
   def full_name
     [last_name, first_name].join(' ')
   end
