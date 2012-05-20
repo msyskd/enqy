@@ -14,7 +14,7 @@
 <% @clients.each do |client| %>
   <tr>
     <td><%= client.name %></td>
-    <td><%= client.user.email %></td>
+    <td><%= client.user.full_name %></td>
     <td><%= client.sales_person.full_name %></td>
     <td><%= client.renewal_month %></td>
     <td><%= client.notice_me %></td>
