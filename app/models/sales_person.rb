@@ -25,6 +25,10 @@ class SalesPerson < ActiveRecord::Base
     self.first_name = split.last
   end
 
+  def email_with_name
+    "#{full_name} <#{email}>"
+  end
+
   def destroyable?
     errors.add(:base, "Sales person used by client can not be destroyed") unless clients.count == 0
     errors.blank?

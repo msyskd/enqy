@@ -21,13 +21,13 @@
 <div class="field">
 	<%= f.label :user_id %>
 	<br />
-	<%= f.collection_select :user_id, User.find(:all), :id, :full_name, :include_blank => true %>
+	<%= f.collection_select :user_id, User.find(:all), :id, :email_with_name, :include_blank => true %>
 
 </div>
 <div class="field">
 	<%= f.label :sales_person_id %>
 	<br />
-	<%= f.collection_select :sales_person_id, SalesPerson.find(:all), :id, :full_name, :include_blank => true %>
+	<%= f.collection_select :sales_person_id, SalesPerson.find(:all), :id, :email_with_name, :include_blank => true %>
 
 </div>
 <div class="field">

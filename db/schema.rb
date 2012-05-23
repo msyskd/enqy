@@ -11,28 +11,29 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120518150401) do
+ActiveRecord::Schema.define(:version => 20120521145220) do
 
   create_table "clients", :force => true do |t|
-    t.string   "name",                               :null => false
-    t.integer  "user_id",                            :null => false
-    t.integer  "sales_person_id",                    :null => false
-    t.boolean  "renewal_month1",  :default => false, :null => false
-    t.boolean  "renewal_month2",  :default => false, :null => false
-    t.boolean  "renewal_month3",  :default => false, :null => false
-    t.boolean  "renewal_month4",  :default => false, :null => false
-    t.boolean  "renewal_month5",  :default => false, :null => false
-    t.boolean  "renewal_month6",  :default => false, :null => false
-    t.boolean  "renewal_month7",  :default => false, :null => false
-    t.boolean  "renewal_month8",  :default => false, :null => false
-    t.boolean  "renewal_month9",  :default => false, :null => false
-    t.boolean  "renewal_month10", :default => false, :null => false
-    t.boolean  "renewal_month11", :default => false, :null => false
-    t.boolean  "renewal_month12", :default => false, :null => false
-    t.integer  "notice_me",       :default => 30,    :null => false
-    t.boolean  "usable",          :default => true,  :null => false
-    t.datetime "created_at",                         :null => false
-    t.datetime "updated_at",                         :null => false
+    t.string   "name",                                :null => false
+    t.integer  "user_id",                             :null => false
+    t.integer  "sales_person_id",                     :null => false
+    t.boolean  "renewal_month1",  :default => false,  :null => false
+    t.boolean  "renewal_month2",  :default => false,  :null => false
+    t.boolean  "renewal_month3",  :default => false,  :null => false
+    t.boolean  "renewal_month4",  :default => false,  :null => false
+    t.boolean  "renewal_month5",  :default => false,  :null => false
+    t.boolean  "renewal_month6",  :default => false,  :null => false
+    t.boolean  "renewal_month7",  :default => false,  :null => false
+    t.boolean  "renewal_month8",  :default => false,  :null => false
+    t.boolean  "renewal_month9",  :default => false,  :null => false
+    t.boolean  "renewal_month10", :default => false,  :null => false
+    t.boolean  "renewal_month11", :default => false,  :null => false
+    t.boolean  "renewal_month12", :default => false,  :null => false
+    t.integer  "notice_me",       :default => 30,     :null => false
+    t.boolean  "usable",          :default => true,   :null => false
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
+    t.integer  "recent",          :default => 190001, :null => false
   end
 
   add_index "clients", ["name"], :name => "index_clients_on_name"
