@@ -5,8 +5,14 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :last_name, :first_name
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :last_name, :first_name, :notice_me, :last_notice
   # attr_accessible :title, :body
+
+  validates :notice_me, :presence => true
+  validates :last_name, :presence => true
+  validates :first_name, :presence => true
+  validates :last_notice, :presence => true, :numericality => true, :length => { :is => 6 }
+
 
   before_destroy :destroyable?
 
@@ -23,6 +29,14 @@ class User < ActiveRecord::Base
 
   def email_with_name
     "#{full_name} <#{email}>"
+  end
+
+  def need_to_notice? (renewal_month)    
+    if renewal_month > last_notice
+      true
+    else
+      false
+    end
   end
 
   def destroyable?

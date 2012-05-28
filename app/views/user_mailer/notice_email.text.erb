@@ -1,2 +1,9 @@
-hello <%= @user.full_name %> .
-This is a sample email.
+こんにちは <%= @user.full_name %> さん。
+
+<%= @year %>年<%= @month %>月の保守契約更新のお知らせです。
+
+<% @clients.each do |client| %>
+  <%= client.name %>
+<% end %>
+
+忘れずに受発注手続きを行なってください。

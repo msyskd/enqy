@@ -4,7 +4,6 @@
     <th>User</th>
     <th>Sales person</th>
     <th>Renewal month</th>
-    <th>Notice me</th>
     <th>Usable</th>
     <th></th>
     <th></th>
@@ -16,8 +15,7 @@
     <td><%= client.name %></td>
     <td><%= client.user.full_name %></td>
     <td><%= client.sales_person.full_name %></td>
-    <td><%= client.renewal_month %></td>
-    <td><%= client.notice_me %></td>
+    <td><%= client.renewal_month.join(',') %></td>
     <td><%= client.usable %></td>
     <td><%= link_to 'Show', client %></td>
     <td><%= link_to 'Edit', edit_client_path(client) %></td>

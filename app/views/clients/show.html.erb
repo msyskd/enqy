@@ -15,12 +15,7 @@
 
 <p>
   <b>Renewal month:</b>
-  <%= @client.renewal_month %>
-</p>
-
-<p>
-  <b>Notice me:</b>
-  <%= @client.notice_me %>
+  <%= @client.renewal_month.join(',') %>
 </p>
 
 <p>
