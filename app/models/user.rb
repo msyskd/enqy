@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
@@ -13,10 +13,10 @@ class User < ActiveRecord::Base
   validates :first_name, :presence => true
   validates :last_notice, :presence => true, :numericality => true, :length => { :is => 6 }
 
-
   before_destroy :destroyable?
 
   has_many :clients
+
   def full_name
     [last_name, first_name].join(' ')
   end

@@ -1,25 +1,25 @@
 <p>
-  <b>Name:</b>
+  <b>名前:</b>
   <%= @client.name %>
 </p>
 
 <p>
-  <b>User:</b>
+  <b>担当SE:</b>
   <%= @client.user.email_with_name %>
 </p>
 
 <p>
-  <b>Sales person:</b>
+  <b>担当営業:</b>
   <%= @client.sales_person.email_with_name %>
 </p>
 
 <p>
-  <b>Renewal month:</b>
+  <b>契約更新月:</b>
   <%= @client.renewal_month.join(',') %>
 </p>
 
 <p>
-  <b>Usable:</b>
+  <b>利用可否:</b>
   <%= @client.usable %>
 </p>
 

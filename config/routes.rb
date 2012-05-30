@@ -1,11 +1,13 @@
 Enqy::Application.routes.draw do
+
   get "notice/index"
 
   resources :sales_people
 
   resources :clients
 
-  devise_for :users
+  devise_for :users, :path_prefix => 'd'
+  resources :users
 
   get "home/index"
 
@@ -65,8 +67,8 @@ Enqy::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
-  
+
   # Setting for devise
   root :to => "home#index"
-  
+
 end
