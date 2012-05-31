@@ -67,7 +67,9 @@ Enqy::Application.configure do
 
   # Setting for devise
   config.action_mailer.default_url_options = { :host => 'enqy.herokuapp.com' }
-  config.assets.initialize_on_precompile = false
+  # config.assets.initialize_on_precompile = false
+
+  config.serve_static_assets = true
 
   # Setting for action mailer
   config.action_mailer.raise_delivery_errors = true
