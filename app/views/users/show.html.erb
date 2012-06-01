@@ -1,17 +1,19 @@
 <p>
-  <b>名前:</b>
-  <%= @user.full_name %>
+	<b>名前:</b>
+	<%= @user.full_name %>
 </p>
 
 <p>
-  <b>Email:</b>
-  <%= @user.email %>
+	<b>Email:</b>
+	<%= @user.email %>
 </p>
 
 <p>
-  <b>通知:</b>
-  <%= @user.notice_me %>
+	<b>通知:</b>
+	<%= @user.notice_me %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<div class="footer_nav">
+	<%= link_to '編集', edit_user_path(@user) %> &nbsp;
+	<%= link_to '一覧に戻る', users_path %> &nbsp;
+</div>

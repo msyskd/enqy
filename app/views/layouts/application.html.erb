@@ -8,9 +8,7 @@
 	</head>
 	<body>
 		<div id="nav">
-			<h1>
-				<%= @title %>
-			</h1>
+			<h1> <%= @title %> </h1>
 			<br/>
 			<br/>
 			<% if user_signed_in? %>
@@ -27,9 +25,9 @@
 				<%= alert %>
 			</p>
 			<%= yield %>
-			<br/>
-			<br/>
-			<%= link_to "Back to Menu", root_path %>
+			<div class="footer_nav">
+				<%= link_to "メニューに戻る", root_path %>
+			</div>
 		</div>
 	</body>
 </html>

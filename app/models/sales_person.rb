@@ -34,4 +34,6 @@ class SalesPerson < ActiveRecord::Base
     errors.blank?
   end
 
+  default_scope order("last_name, first_name")
+
 end

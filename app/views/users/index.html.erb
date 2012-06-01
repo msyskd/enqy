@@ -1,27 +1,28 @@
-<table>
-  <tr>
-    <th>名前</th>
-    <th>Email</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<%= link_to '新規追加', new_user_path %>
+<br />
 
-<% @users.each do |user| %>
-  <tr>
-    <td><%= user.full_name %></td>
-    <td><%= user.email %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td>
+<br />
+
+<table class="index">
+	<tr>
+		<th>名前</th>
+		<th>Email</th>
+		<th></th>
+	</tr>
+
+	<% @users.each do |user| %>
+	<tr>
+		<td><%= user.full_name %></td>
+		<td><%= user.email %></td>
+		<td><%= link_to '表示', user %>
+		<%= link_to '編集', edit_user_path(user) %>
 		<% if user.destroyable? %>
-			<%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %>
-    	<% end %>
-    </td>
-  </tr>
-<% end %>
+		<%= link_to '削除', user, confirm: '削除しますか?', method: :delete %>
+		<% end %> </td>
+	</tr>
+	<% end %>
 </table>
 
 <br />
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to '新規追加', new_user_path %>

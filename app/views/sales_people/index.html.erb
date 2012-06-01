@@ -1,31 +1,31 @@
-<table>
-  <tr>
-    <th>名前</th>
-    <th>Email</th>
-    <th>電話番号1</th>
-    <th>電話番号2</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<%= link_to '新規追加', new_sales_person_path %> <br />
 
-<% @sales_people.each do |sales_person| %>
-  <tr>
-    <td><%= sales_person.full_name %></td>
-    <td><%= sales_person.email %></td>
-    <td><%= sales_person.phone1 %></td>
-    <td><%= sales_person.phone2 %></td>
-    <td><%= link_to 'Show', sales_person %></td>
-    <td><%= link_to 'Edit', edit_sales_person_path(sales_person) %></td>
-    <td>
+<br />
+
+<table class="index">
+	<tr>
+		<th>名前</th>
+		<th>Email</th>
+		<th>電話番号1</th>
+		<th>電話番号2</th>
+		<th></th>
+	</tr>
+
+	<% @sales_people.each do |sales_person| %>
+	<tr>
+		<td><%= sales_person.full_name %></td>
+		<td><%= sales_person.email %></td>
+		<td><%= sales_person.phone1 %></td>
+		<td><%= sales_person.phone2 %></td>
+		<td><%= link_to '表示', sales_person %>
+		<%= link_to '編集', edit_sales_person_path(sales_person) %>
 		<% if sales_person.destroyable? %>
-			<%= link_to 'Destroy', sales_person, confirm: 'Are you sure?', method: :delete %>
-    	<% end %>
-    </td>
-  </tr>
-<% end %>
+		<%= link_to '削除', sales_person, confirm: '削除しますか?', method: :delete %>
+		<% end %> </td>
+	</tr>
+	<% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Sales person', new_sales_person_path %>
+<%= link_to '新規追加', new_sales_person_path %>

@@ -1,28 +1,28 @@
-<p>
-  <b>名前:</b>
-  <%= @client.name %>
-</p>
+<table class="form">
 
-<p>
-  <b>担当SE:</b>
-  <%= @client.user.email_with_name %>
-</p>
+	<tr>
+		<td>名前:</td>
+		<td> <%= @client.name %> </td>
+	</tr>
+	<tr>
+		<td>担当SE:</td>
+		<td> <%= @client.user.email_with_name %> </td>
+	</tr>
+	<tr>
+		<td>営業担当:</td>
+		<td> <%= @client.sales_person.email_with_name %> </td>
+	</tr>
+	<tr>
+		<td>契約更新月:</td>
+		<td> <%= @client.renewal_month.join(',') %> </td>
+	</tr>
+	<tr>
+		<td>利用可否:</td>
+		<td> <%= @client.usable %> </td>
+	</tr>
+</table>
 
-<p>
-  <b>担当営業:</b>
-  <%= @client.sales_person.email_with_name %>
-</p>
-
-<p>
-  <b>契約更新月:</b>
-  <%= @client.renewal_month.join(',') %>
-</p>
-
-<p>
-  <b>利用可否:</b>
-  <%= @client.usable %>
-</p>
-
-
-<%= link_to 'Edit', edit_client_path(@client) %> |
-<%= link_to 'Back', clients_path %>
+<div class="footer_nav">
+	<%= link_to '編集', edit_client_path(@client) %> &nbsp;
+	<%= link_to '一覧に戻る', clients_path %>
+</div>

@@ -43,5 +43,6 @@ class Client < ActiveRecord::Base
   scope :renewal_on_month11, where(:renewal_month11 => true)
   scope :renewal_on_month12, where(:renewal_month12 => true)
   
+  default_scope order("name")
   
 end

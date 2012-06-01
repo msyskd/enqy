@@ -1,0 +1,35 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        email: Email
+        password: パスワード
+        password_confirmation: パスワード（再入力）
+        remember_me: 次回からパスワード入力を省く
+        first_name: 名
+        last_name: 姓
+        notice_me: 通知
+      client:
+        name: 名称
+        renewal_month1: 1月更新
+        renewal_month2: 2月更新
+        renewal_month3: 3月更新
+        renewal_month4: 4月更新
+        renewal_month5: 5月更新
+        renewal_month6: 6月更新
+        renewal_month7: 7月更新
+        renewal_month8: 8月更新
+        renewal_month9: 9月更新
+        renewal_month10: 10月更新
+        renewal_month11: 11月更新
+        renewal_month12: 12月更新
+        sales_person_id: 営業担当者
+        usable: 利用可否
+        user_id: SE
+      sales_person:
+        email: Email
+        first_name: 名
+        last_name: 姓
+        phone1: 電話番号
+        phone2: 電話番号
+        

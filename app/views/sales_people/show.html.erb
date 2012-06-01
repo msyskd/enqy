@@ -18,6 +18,7 @@
   <%= @sales_person.phone2 %>
 </p>
 
-
-<%= link_to 'Edit', edit_sales_person_path(@sales_person) %> |
-<%= link_to 'Back', sales_people_path %>
+<div class="footer_nav">
+<%= link_to '編集', edit_sales_person_path(@sales_person) %> &nbsp;
+<%= link_to '一覧に戻る', sales_people_path %>
+</div>
