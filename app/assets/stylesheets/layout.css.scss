@@ -34,6 +34,7 @@ div#nav {
   margin: 0 auto;
   margin-top: 20px;
   margin-bottom: 15px;
+  padding: 15px 25px;
   background-color: $base-color;
   h1 {
     float: left;
@@ -48,6 +49,7 @@ div#main_content {
   border-radius: 10px;
   width: 80%;
   margin: 0 auto;
+  padding: 15px 25px;
   background-color: $base-color;
   background: -moz-linear-gradient(top, $base-color, $back-color);
   background: -webkit-gradient(linear, left top, left bottom, from($base-color), to($back-color));
