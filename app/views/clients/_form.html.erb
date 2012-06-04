@@ -13,65 +13,69 @@
 </div>
 <% end %>
 
-<div class="field">
-	<%= f.label :name %>
-	<br />
-	<%= f.text_field :name %>
-</div>
-<div class="field">
-	<%= f.label :user_id %>
-	<br />
-	<%= f.collection_select :user_id, User.find(:all), :id, :email_with_name, :include_blank => true %>
+<table class="form">
+	<tr>
+		<td><%= f.label :name %></td>
+		<td> <%= f.text_field :name %></td>
+	</tr>
 
-</div>
-<div class="field">
-	<%= f.label :sales_person_id %>
-	<br />
-	<%= f.collection_select :sales_person_id, SalesPerson.find(:all), :id, :email_with_name, :include_blank => true %>
+	<tr>
+		<td><%= f.label :user_id %></td>
+		<td><%= f.collection_select :user_id, User.find(:all), :id, :email_with_name, :include_blank => true %></td>
+	</tr>
 
-</div>
-<div class="field">
-	<label>契約更新月</label>
-	<br />
+	<tr>
+		<td><%= f.label :sales_person_id %></td>
+		<td><%= f.collection_select :sales_person_id, SalesPerson.find(:all), :id, :email_with_name, :include_blank => true %></td>
+	</tr>
 
-	<table>
-		<tr>
-			<td> <%= f.check_box :renewal_month1 %></td>
-			<td>1</td>
-			<td> <%= f.check_box :renewal_month2 %></td>
-			<td>2</td>
-			<td> <%= f.check_box :renewal_month3 %></td>
-			<td>3</td>
-			<td> <%= f.check_box :renewal_month4 %></td>
-			<td>4</td>
-			<td> <%= f.check_box :renewal_month5 %></td>
-			<td>5</td>
-			<td> <%= f.check_box :renewal_month6 %></td>
-			<td>6</td>
-		</tr>
-		<tr>
-			<td> <%= f.check_box :renewal_month7 %></td>
-			<td>7</td>
-			<td> <%= f.check_box :renewal_month8 %></td>
-			<td>8</td>
-			<td> <%= f.check_box :renewal_month9%></td>
-			<td>9</td>
-			<td> <%= f.check_box :renewal_month10 %></td>
-			<td>10</td>
-			<td> <%= f.check_box :renewal_month11 %></td>
-			<td>11</td>
-			<td> <%= f.check_box :renewal_month12 %></td>
-			<td>12</td>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
 
-		</tr>
+	<tr>
+		<td>契約更新月</td>
+		<td>
+		<table>
+			<tr>
+				<td> <%= f.check_box :renewal_month1 %></td>
+				<td>1</td>
+				<td> <%= f.check_box :renewal_month2 %></td>
+				<td>2</td>
+				<td> <%= f.check_box :renewal_month3 %></td>
+				<td>3</td>
+				<td> <%= f.check_box :renewal_month4 %></td>
+				<td>4</td>
+				<td> <%= f.check_box :renewal_month5 %></td>
+				<td>5</td>
+				<td> <%= f.check_box :renewal_month6 %></td>
+				<td>6</td>
+			</tr>
+			<tr>
+				<td> <%= f.check_box :renewal_month7 %></td>
+				<td>7</td>
+				<td> <%= f.check_box :renewal_month8 %></td>
+				<td>8</td>
+				<td> <%= f.check_box :renewal_month9%></td>
+				<td>9</td>
+				<td> <%= f.check_box :renewal_month10 %></td>
+				<td>10</td>
+				<td> <%= f.check_box :renewal_month11 %></td>
+				<td>11</td>
+				<td> <%= f.check_box :renewal_month12 %></td>
+				<td>12</td>
+			</tr>
+		</table></td>
+	</tr>
 
-	</table>
-</div>
-<div class="field">
-	<%= f.label :usable %>
-	<br />
-	<%= f.check_box :usable %>
-</div>
+	<tr>
+		<td><%= f.label :usable %></td>
+		<td><%= f.check_box :usable %></td>
+	</tr>
+
+</table>
+
 <div class="actions">
 	<%= f.submit %>
 </div>

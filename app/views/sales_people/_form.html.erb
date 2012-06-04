@@ -1,37 +1,48 @@
 <%= form_for(@sales_person) do |f| %>
-  <% if @sales_person.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@sales_person.errors.count, "error") %> prohibited this sales_person from being saved:</h2>
+<% if @sales_person.errors.any? %>
+<div id="error_explanation">
+	<h2><%= pluralize(@sales_person.errors.count, "error") %> prohibited this sales_person from being saved:</h2>
 
-      <ul>
-      <% @sales_person.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+	<ul>
+		<% @sales_person.errors.full_messages.each do |msg| %>
+		<li>
+			<%= msg %>
+		</li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
 
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :phone1 %><br />
-    <%= f.number_field :phone1 %>
-  </div>
-  <div class="field">
-    <%= f.label :phone2 %><br />
-    <%= f.number_field :phone2 %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<table class="form">
+
+	<tr>
+		<td><%= f.label :last_name %></td>
+		<td><%= f.text_field :last_name %></td>
+	</tr>
+
+	<tr>
+		<td><%= f.label :first_name %></td>
+		<td><%= f.text_field :first_name %></td>
+	</tr>
+
+	<tr>
+		<td><%= f.label :email %></td>
+		<td><%= f.text_field :email %></td>
+	</tr>
+
+	<tr>
+		<td><%= f.label :phone1 %></td>
+		<td><%= f.number_field :phone1 %></td>
+	</tr>
+
+	<tr>
+		<td><%= f.label :phone2 %></td>
+		<td><%= f.number_field :phone2 %></td>
+	</tr>
+
+</table>
+
+<div class="actions">
+	<%= f.submit %>
+</div>
 <% end %>

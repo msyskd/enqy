@@ -88,6 +88,13 @@ table.form{
   
 }
 
+div.actions{
+  width: 160px;
+  margin-left: auto;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
 div.footer_nav{
   text-align: right;
 }
@@ -115,7 +122,7 @@ a {
     background-color: #000; } }
 
 div {
-  &.field, &.actions {
+  &.fields{
     margin-bottom: 10px; } }
 
 #notice {
