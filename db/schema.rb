@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120526164535) do
+ActiveRecord::Schema.define(:version => 20120615150944) do
 
   create_table "clients", :force => true do |t|
     t.string   "name",                               :null => false
@@ -36,6 +36,17 @@ ActiveRecord::Schema.define(:version => 20120526164535) do
 
   add_index "clients", ["name"], :name => "index_clients_on_name"
 
+  create_table "licenses", :force => true do |t|
+    t.integer  "client_id",                 :null => false
+    t.integer  "system_id",                 :null => false
+    t.integer  "amount",     :default => 0
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
+
+  add_index "licenses", ["client_id"], :name => "index_licenses_on_client_id"
+  add_index "licenses", ["system_id"], :name => "index_licenses_on_system_id"
+
   create_table "sales_people", :force => true do |t|
     t.string   "first_name", :null => false
     t.string   "last_name",  :null => false
@@ -49,6 +60,15 @@ ActiveRecord::Schema.define(:version => 20120526164535) do
   add_index "sales_people", ["email"], :name => "index_sales_people_on_email"
   add_index "sales_people", ["first_name"], :name => "index_sales_people_on_first_name"
   add_index "sales_people", ["last_name"], :name => "index_sales_people_on_last_name"
+
+  create_table "systems", :force => true do |t|
+    t.integer  "sort",       :null => false
+    t.string   "name",       :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "systems", ["sort"], :name => "index_systems_on_sort"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "",     :null => false

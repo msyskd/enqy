@@ -29,10 +29,16 @@
 		<td><%= f.collection_select :sales_person_id, SalesPerson.find(:all), :id, :email_with_name, :include_blank => true %></td>
 	</tr>
 
+	<%= f.fields_for :licenses do |ff| %>
 	<tr>
-		<td></td>
-		<td></td>
+		<td><%= ff.label :system_id %></td>
+		</td>
+		<td> <%= ff.number_field :amount %>
+		<%= ff.hidden_field :system_id %> 
+		<%= ff.hidden_field :system_name %> 
+		</td>
 	</tr>
+	<% end %>
 
 	<tr>
 		<td>契約更新月</td>

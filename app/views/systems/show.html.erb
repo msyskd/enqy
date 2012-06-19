@@ -1,0 +1,14 @@
+<p>
+  <b>出力順:</b>
+  <%= @system.sort %>
+</p>
+
+<p>
+  <b>名前:</b>
+  <%= @system.name %>
+</p>
+
+<div class="footer_nav">
+<%= link_to '編集', edit_system_path(@system) %> &nbsp;
+<%= link_to '一覧に戻る', systems_path %>
+</div>

@@ -1,0 +1,27 @@
+<%= link_to '新規追加', new_system_path %> <br />
+
+<br />
+
+<table class="index">
+	<tr>
+		<th>出力順</th>
+		<th>名前</th>
+		<th></th>
+	</tr>
+
+	<% @systems.each do |system| %>
+	<tr>
+		<td><%= system.sort %></td>
+		<td><%= system.name %></td>
+		<td><%= link_to '表示', system %>
+		<%= link_to '編集', edit_system_path(system) %>
+		<% if system.destroyable? %>
+		<%= link_to '削除', system, confirm: '削除しますか?', method: :delete %>
+		<% end %> </td>
+	</tr>
+	<% end %>
+</table>
+
+<br />
+
+<%= link_to '新規追加', new_system_path %>

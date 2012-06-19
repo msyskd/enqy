@@ -3,7 +3,7 @@ Enqy::Application.routes.draw do
   get "notice/index"
 
   resources :sales_people
-
+  resources :systems
   resources :clients
 
   devise_for :users, :path_prefix => 'd'

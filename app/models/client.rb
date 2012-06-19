@@ -1,5 +1,5 @@
 class Client < ActiveRecord::Base
-  attr_accessible :name, :renewal_month1, :renewal_month10, :renewal_month11, :renewal_month12, :renewal_month2, :renewal_month3, :renewal_month4, :renewal_month5, :renewal_month6, :renewal_month7, :renewal_month8, :renewal_month9, :sales_person_id, :usable, :user_id
+  attr_accessible :name, :renewal_month1, :renewal_month10, :renewal_month11, :renewal_month12, :renewal_month2, :renewal_month3, :renewal_month4, :renewal_month5, :renewal_month6, :renewal_month7, :renewal_month8, :renewal_month9, :sales_person_id, :usable, :user_id, :licenses_attributes
 
   validates :name, :presence => true
   validates :sales_person_id, :presence => true, :numericality => true
@@ -7,6 +7,11 @@ class Client < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :sales_person
+  belongs_to :system
+  
+  has_many :licenses, :dependent => :destroy
+  has_many :systems, :through => :licenses
+  accepts_nested_attributes_for :licenses
   
   def renewal_month
     a = []

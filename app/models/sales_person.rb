@@ -3,7 +3,7 @@ class SalesPerson < ActiveRecord::Base
 
   before_destroy :destroyable?
 
-  validates :email, :presence => true
+  validates :email, :presence => true, :uniqueness => true
   validates :first_name, :presence => true
   validates :last_name, :presence => true
   validates :phone1, :presence => true, :numericality => true
@@ -14,7 +14,7 @@ class SalesPerson < ActiveRecord::Base
                       :message    => 'email must be valid'
 
   has_many :clients
-
+  
   def full_name
     [last_name, first_name].join(' ')
   end

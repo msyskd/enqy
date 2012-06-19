@@ -28,6 +28,10 @@ class ClientsController < ApplicationController
   def new
     @client = Client.new
     @title = "New Client"
+    
+    System.all.each do |system|
+      @client.licenses.build(:system_id => system.id)
+    end
 
     respond_to do |format|
       format.html # new.html.erb

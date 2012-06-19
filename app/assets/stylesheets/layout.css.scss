@@ -89,14 +89,17 @@ table.form{
 }
 
 div.actions{
-  width: 160px;
+  width: 25%;
   margin-left: auto;
+  margin-right: 0;
   margin-top: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 div.footer_nav{
-  text-align: right;
+  width: 20%;
+  margin-left: auto;
+  margin-right: 0;
 }
 
 .field_with_errors {
