@@ -31,11 +31,10 @@
 
 	<%= f.fields_for :licenses do |ff| %>
 	<tr>
-		<td><%= ff.label :system_id %></td>
+		<td><%= ff.label :amount, ff.object.system.name %></td>
 		</td>
 		<td> <%= ff.number_field :amount %>
 		<%= ff.hidden_field :system_id %> 
-		<%= ff.hidden_field :system_name %> 
 		</td>
 	</tr>
 	<% end %>

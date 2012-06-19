@@ -12,6 +12,14 @@
 		<td>営業担当:</td>
 		<td> <%= @client.sales_person.email_with_name %> </td>
 	</tr>
+
+	<% @client.licenses.each do |license| %>
+	<tr>
+		<td><%= license.system.name %></td>
+		<td><%= license.amount %></td>
+	</tr>
+	<% end %>
+
 	<tr>
 		<td>契約更新月:</td>
 		<td> <%= @client.renewal_month.join(',') %> </td>
