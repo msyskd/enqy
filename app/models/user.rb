@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
   before_destroy :destroyable?
 
   has_many :clients
+  has_many :enquiries
 
   def full_name
     [last_name, first_name].join(' ')

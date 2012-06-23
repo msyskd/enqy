@@ -7,6 +7,7 @@ class System < ActiveRecord::Base
   validates :sort, :presence => true
 
   has_many :clients
+  has_many :enquiries
 
   has_many :licenses
   has_many :clients, :through => :licenses

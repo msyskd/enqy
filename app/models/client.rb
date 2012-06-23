@@ -9,6 +9,8 @@ class Client < ActiveRecord::Base
   belongs_to :sales_person
   belongs_to :system
   
+  has_many :enquiries
+  
   has_many :licenses, :dependent => :destroy
   has_many :systems, :through => :licenses
   accepts_nested_attributes_for :licenses
