@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120615150944) do
+ActiveRecord::Schema.define(:version => 20120627150042) do
 
   create_table "clients", :force => true do |t|
     t.string   "name",                               :null => false
@@ -35,6 +35,25 @@ ActiveRecord::Schema.define(:version => 20120615150944) do
   end
 
   add_index "clients", ["name"], :name => "index_clients_on_name"
+
+  create_table "enquiries", :force => true do |t|
+    t.integer  "client_id",                     :null => false
+    t.integer  "user_id",                       :null => false
+    t.integer  "system_id",                     :null => false
+    t.datetime "start",                         :null => false
+    t.datetime "end"
+    t.boolean  "closed",     :default => false, :null => false
+    t.text     "question",                      :null => false
+    t.text     "answer"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.time     "total_time"
+  end
+
+  add_index "enquiries", ["client_id"], :name => "index_enquiries_on_client_id"
+  add_index "enquiries", ["closed"], :name => "index_enquiries_on_closed"
+  add_index "enquiries", ["system_id"], :name => "index_enquiries_on_system_id"
+  add_index "enquiries", ["user_id"], :name => "index_enquiries_on_user_id"
 
   create_table "licenses", :force => true do |t|
     t.integer  "client_id",                 :null => false

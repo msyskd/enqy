@@ -59,7 +59,7 @@ table.index{
   border: 1px $index-border-color solid;
   border-collapse: collapse;
   border-spacing: 0;
-  width: 95%;
+  width: 90%;
   margin: 0 auto;
   th{
     padding: 5px;
@@ -76,6 +76,10 @@ table.index{
     border: 1px $index-border-color solid;
     border-width: 0 0 1px 1px;
     text-align: left;
+  }
+  td.long{
+    width: 35%;
+    word-break: break-all ;
   }
 }
 

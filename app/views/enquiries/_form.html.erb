@@ -1,0 +1,58 @@
+<%= form_for(@enquiry) do |f| %>
+<% if @enquiry.errors.any? %>
+<div id="error_explanation">
+	<h2><%= pluralize(@enquiry.errors.count, "error") %> prohibited this client from being saved:</h2>
+
+	<ul>
+		<% @enquiry.errors.full_messages.each do |msg| %>
+		<li>
+			<%= msg %>
+		</li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+
+<table class="form">
+	<tr>
+		<td><%= f.label :start %></td>
+		<td><%= f.datetime_select :start, :default => Time.now, :use_month_number => true, :date_separator => ' / ', :start_year => Time.now.year - 1, :end_year => Time.now.year + 1 %></td>
+	</tr>
+	<tr>
+		<td><%= f.label :closed %>
+		<%= f.check_box :closed %></td>
+		<td><%= f.datetime_select :end, :use_month_number => true, :date_separator => ' / ', :start_year => Time.now.year - 1, :end_year => Time.now.year + 1, :include_blank => true %></td>
+	</tr>
+	<tr id="time">
+		<td><%= f.label :total_time %></td>
+		<td> <%= f.time_select :total_time, :include_blank => true%></td>
+	</tr>
+
+	<tr>
+		<td><%= f.label :user_id %></td>
+		<td><%= f.collection_select :user_id, User.find(:all), :id, :email_with_name, :include_blank => true %></td>
+	</tr>
+	<tr>
+		<td><%= f.label :client_id %></td>
+		<td><%= f.collection_select :client_id, Client.find(:all), :id, :name, :include_blank => true %></td>
+	</tr>
+	<tr>
+		<td><%= f.label :system_id %></td>
+		<td><%= f.collection_select :system_id, System.find(:all), :id, :name, :include_blank => true %></td>
+	</tr>
+	<tr>
+		<td><%= f.label :question %></td>
+		<td> <%= f.text_area :question, { :cols => 80, :rows => 20} %></td>
+	</tr>
+
+	<tr>
+		<td><%= f.label :answer %></td>
+		<td> <%= f.text_area :answer, { :cols => 80, :rows => 20} %></td>
+	</tr>
+
+</table>
+
+<div class="actions">
+	<%= f.submit %>
+</div>
+<% end %>

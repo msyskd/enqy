@@ -2,6 +2,7 @@ Enqy::Application.routes.draw do
 
   get "notice/index"
 
+  resources :enquiries
   resources :sales_people
   resources :systems
   resources :clients

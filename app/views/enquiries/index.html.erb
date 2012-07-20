@@ -1,0 +1,38 @@
+<%= link_to '新規問合', new_enquiry_path %> <br />
+
+<br />
+
+<div class="search">
+
+<%= form_tag enquiries_path, :method => "get" do %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
+
+</div>
+
+<table class="index">
+	<tr>
+		<th>システム</th>
+		<th>質問</th>
+		<th>回答</th>
+		<th>顧客</th>
+		<th></th>
+	</tr>
+
+	<% @enquiries.each do |enquiry| %>
+	<tr>
+		<td><%= enquiry.system.name %></td>
+		<td class="long" ><%= truncate enquiry.question, :length => 100 %></td>
+		<td class="long" ><%= truncate enquiry.answer, :length => 100 %></td>
+		<td><%= enquiry.client.name %></td>
+		<td><%= link_to '表示', enquiry %>
+		<%= link_to '編集', edit_enquiry_path(enquiry) %>
+		<%= link_to '削除', enquiry, confirm: '削除しますか?', method: :delete %>
+	</tr>
+	<% end %>
+</table>
+
+<br />
+
+<%= link_to '新規追加', new_enquiry_path %>
